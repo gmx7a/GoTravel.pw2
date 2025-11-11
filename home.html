@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>GoTravel - Home</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body class="mobile-app">
+  <input type="checkbox" id="menu-toggle" class="hidden-checkbox"/>
+
+  <nav class="main-sidebar" role="navigation" aria-label="Main menu">
+    <label for="menu-toggle" class="close-btn"><i class="fas fa-times"></i></label>
+    <ul class="menu-list">
+      <li><a href="home.html" class="menu-item active"><i class="fas fa-house"></i> Home</a></li>
+      <li><a href="gallery.html" class="menu-item"><i class="fas fa-images"></i> Gallery</a></li>
+      <li><a href="booking.html" class="menu-item"><i class="fas fa-ticket"></i> Booking</a></li>
+	  <li><a href="index.html" class="menu-item"><i class="fas fa-right-to-bracket"></i> Logout</a></li>
+    </ul>
+  </nav>
+  <label for="menu-toggle" class="backdrop" aria-hidden="true"></label>
+
+  <header class="home-header" role="banner">
+    <div class="top-bar">
+      <label for="menu-toggle" class="menu-icon-btn" role="button" aria-controls="main-sidebar" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </label>
+      <h1 class="logo-title">GoTravel</h1>
+      <a href="index.html" class="profile-pic-container" aria-label="Go to Login">
+        <img class="profile-pic" alt="User avatar" src="https://images3.alphacoders.com/131/1310203.png">
+      </a>
+    </div>
+    <div class="header-content container">
+      <p class="welcome-text">👋 Welcome back, Traveler!</p>
+      <h2>Plan your next escape.</h2>
+    </div>
+    <form class="search-bar" role="search" aria-label="Search">
+      <i class="fas fa-search search-icon" aria-hidden="true"></i>
+      <input type="search" placeholder="Search destinations, flights, or hotels..." aria-label="Search field" required/>
+      <button type="submit" class="btn-search" aria-label="Start search"><i class="fas fa-arrow-right"></i></button>
+    </form>
+  </header>
+
+  <main role="main">
+    <section class="quick-links container">
+      <h3 class="section-title">Quick Access</h3>
+      <div class="action-grid">
+        <a href="home.html" class="action-item"><i class="fas fa-house"></i><span>Home</span></a>
+        <a href="gallery.html" class="action-item"><i class="fas fa-images"></i><span>Gallery</span></a>
+        <a href="booking.html" class="action-item"><i class="fas fa-ticket"></i><span>Booking</span></a>
+		<a href="index.html" class="action-item"><i class="fas fa-right-to-bracket"></i><span>Logout</span></a>
+      </div>
+    </section>
+
+    <section class="featured-destinations">
+      <div class="section-header-nav container">
+        <h3 class="section-title">🌎 Trending Destinations</h3>
+        <div class="scroll-nav-btns">
+          <button class="scroll-btn" id="scroll-left" aria-label="Scroll left"><i class="fas fa-chevron-left"></i></button>
+          <button class="scroll-btn" id="scroll-right" aria-label="Scroll right"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+      <div class="scroll-list destination-cards-list" id="destination-scroller">
+        <a href="#" class="destination-card indo-card">
+          <div class="destination-card-content"><h4>Bali, Indonesia</h4><p>Island of the Gods</p></div>
+        </a>
+        <a href="#" class="destination-card tokyo-card">
+          <div class="destination-card-content"><h4>Tokyo, Japan</h4><p>Culture & Innovation</p></div>
+        </a>
+        <a href="#" class="destination-card greece-card">
+          <div class="destination-card-content"><h4>Santorini, Greece</h4><p>Calm Aegean Views</p></div>
+        </a>
+        <a href="#" class="destination-card italy-card">
+          <div class="destination-card-content"><h4>Venice, Italy</h4><p>Romantic Canals</p></div>
+        </a>
+		<a href="#" class="destination-card china-card">
+          <div class="destination-card-content"><h4>Hong Kong, China</h4><p>Asia's World City</p></div>
+        </a>
+		<a href="#" class="destination-card france-card">
+          <div class="destination-card-content"><h4>Paris, France</h4><p>City of Light & Love</p></div>
+        </a>
+      </div>
+    </section>
+
+    <section class="dynamic-tip container">
+      <div class="card clean-tip-card">
+        <i class="fas fa-lightbulb" style="margin-right:10px"></i>
+        <div>
+          <h4>Travel Tip: Book Flexible Fares</h4>
+          <p>Check cancellation policies before you book for hassle-free changes.</p>
+        </div>
+      </div>
+    </section>
+    <div class="content-padding" aria-hidden="true"></div>
+  </main>
+
+  <!-- Reusable Modal -->
+  <div class="modal-overlay" aria-hidden="true"></div>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <header id="modalTitle">Title</header>
+    <div class="content">Message</div>
+    <div class="actions"><button class="btn btn-primary" type="button">OK</button></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

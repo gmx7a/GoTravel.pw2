@@ -1,0 +1,408 @@
+/* style.css - GoTravel (refined) */
+
+/* ---------- CSS Variables ---------- */
+:root{
+  --primary:#4a90e2;
+  --primary-dark:#3a7bd5;
+  --secondary:#50e3c2;
+  --text:#222;
+  --muted:#666;
+  --bg:#f7f8fb;
+  --white:#fff;
+  --shadow-sm:0 2px 10px rgba(0,0,0,.08);
+  --shadow-md:0 8px 24px rgba(0,0,0,.12);
+  --radius:14px;
+}
+
+/* ---------- Resets ---------- */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.55;
+  max-width:500px; /* mobile-first app shell */
+  margin-inline:auto;
+  overflow-x:hidden;
+}
+/* Utilities */
+.container{padding-inline:20px}
+.card{
+  background:var(--white);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);
+  padding:20px;
+  border:1px solid #eee;
+  margin-bottom:16px;
+}
+.section-title{
+  font-weight:800;
+  font-size:1.15rem;
+  margin:18px 0 10px;
+}
+.section-subtitle{
+  font-size:.95rem;
+  color:var(--muted);
+  margin:-6px 0 16px;
+}
+
+/* Buttons */
+.btn{
+  display:block; width:100%;
+  padding:14px 16px;
+  border:0; border-radius:10px;
+  font-weight:700; font-size:1rem;
+  background:var(--primary);
+  color:#fff; cursor:pointer;
+  transition:transform .08s ease, filter .2s ease;
+}
+.btn:hover{filter:brightness(1.05)}
+.btn:active{transform:scale(.98)}
+.btn-outline{
+  background:#fff; color:var(--primary);
+  border:2px solid var(--primary);
+}
+
+/* Inputs */
+.form-label{display:block; font-weight:700; margin:12px 0 6px}
+.form-control{
+  width:100%; padding:12px 14px; border-radius:10px;
+  border:1px solid #ddd; font-size:1rem;
+  transition:border-color .2s ease;
+}
+.form-control:focus{outline:0; border-color:var(--primary)}
+.input-error{border-color:#e11d48 !important}
+.error-text{color:#e11d48; font-size:.85rem; margin-top:6px}
+
+/* ---------- Header / Hero ---------- */
+.home-header{
+  position:relative;
+  border-bottom-left-radius:var(--radius);
+  border-bottom-right-radius:var(--radius);
+  background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop');
+  background-size:cover; background-position:center;
+  color:#fff; overflow:hidden; box-shadow:var(--shadow-sm);
+  padding-bottom:18px;
+}
+.home-header::before{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.35));
+}
+.top-bar{
+	position:relative; z-index:1; display:flex; align-items:center; justify-content:space-between; padding:14px 20px 8px
+	}
+.logo-title{
+	font-size:1.6rem; font-weight:900
+	}
+.header-content{
+	position:relative; z-index:1; text-align:center; padding:6px 20px 16px
+	}
+.welcome-text{
+	opacity:.95
+	}
+
+/* Profile */
+.profile-pic-container{
+	width:40px;height:40px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 3px rgba(255,255,255,.9)
+	}
+.profile-pic{
+	width:100%;height:100%;object-fit:cover
+	}
+
+/* ---------- Sidebar (Hamburger) ---------- */
+.hidden-checkbox{
+	display:none
+	}
+.menu-icon-btn{
+	font-size:1.5rem; cursor:pointer
+	}
+.main-sidebar{
+  position:fixed; inset:0 auto 0 0; width:280px; background:#fff; z-index:1002;
+  transform:translateX(-100%); transition:transform .35s ease; box-shadow:var(--shadow-md); padding-top:64px;
+}
+#menu-toggle:checked ~ .main-sidebar{
+	transform:translateX(0)
+	}
+.close-btn{
+	position:absolute; top:14px; right:18px; font-size:1.6rem; color:#999; cursor:pointer
+	}
+.menu-list{
+	list-style:none; padding:0; margin:0
+	}
+.menu-item{
+	display:block; padding:14px 18px; color:var(--text); border-bottom:1px solid #eee; font-weight:600
+	}
+.menu-item i{
+	width:22px
+	}
+.menu-item:hover,.menu-item.active{
+	background:#f3f6ff; color:var(--primary)
+	}
+
+/* Backdrop */
+.backdrop{
+  position:fixed; inset:0; background:rgba(0,0,0,.35); z-index:1001; display:none;
+}
+#menu-toggle:checked ~ .backdrop{
+	display:block
+	}
+
+/* ---------- Search ---------- */
+.search-bar{
+  position:relative; z-index:1;
+  display:flex; align-items:center; gap:10px;
+  background:#fff; border-radius:12px;
+  margin:0 20px; padding:12px 12px; box-shadow:var(--shadow-sm);
+}
+.search-bar input{
+	flex:1; border:0; outline:0; font-size:1rem
+	}
+.search-icon{
+	color:#888
+	}
+.btn-search{
+	border:0; background:var(--primary); color:#fff; width:40px; height:40px; border-radius:10px; cursor:pointer
+	}
+
+/* ---------- Quick Links Grid ---------- */
+.quick-links{
+	margin-top:10px
+	}
+.action-grid{
+	display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:12px
+	}
+.action-item{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  background:#fff; border-radius:12px; padding:14px 6px; box-shadow:var(--shadow-sm);
+  color:var(--text); transition:transform .15s ease, background .2s ease, color .2s ease;
+}
+.action-item i{
+	font-size:1.4rem; color:var(--primary); margin-bottom:6px
+	}
+.action-item:hover{
+	transform:scale(1.04); background:var(--primary); color:#fff
+	}
+.action-item:hover i{
+	color:#fff
+	}
+
+/* ---------- Horizontal scroller ---------- */
+.section-header-nav{
+	display:flex; align-items:center; justify-content:space-between; padding:0 20px
+	}
+.scroll-nav-btns{
+	display:flex; gap:8px
+	}
+.scroll-btn{
+  width:34px;height:34px;border-radius:50%; border:1px solid #ddd; background:#fff;
+  display:grid; place-items:center; cursor:pointer
+}
+.scroll-list{
+	display:flex; gap:14px; overflow-x:auto; padding:0 20px 14px; -webkit-overflow-scrolling:touch; scrollbar-width:none
+	}
+.scroll-list::-webkit-scrollbar{display:none}
+.destination-card{
+  min-width:200px; height:150px; border-radius:12px; overflow:hidden; position:relative; box-shadow:var(--shadow-sm)
+}
+.destination-card-content{
+  position:absolute; inset:auto 0 0 0; padding:10px 12px;
+  background:linear-gradient(180deg,rgba(0,0,0,0) 0, rgba(0,0,0,.75) 100%); color:#fff;
+}
+.destination-card-content h4{margin:0 0 4px; font-size:1rem}
+
+/* Destination bg helpers */
+.indo-card{
+	background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJs5RXoJDH-E4IgtwQTMyZ3xKeT_B_fTZFlA&s') center/cover
+	}
+.tokyo-card{
+	background:url('https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_3840,h_1920,g_auto/dpr_auto/f_auto/q_auto:eco/v1/gettyimages-1390815938?_a=BAVAZGID0') center/cover
+	}
+.greece-card{
+	background:url('https://greeceinsiders.travel/wp-content/uploads/2021/02/Santorini-Oia.jpg') center/cover
+	}
+.italy-card{
+	background:url('https://i0.wp.com/thisdarlingworld.com/wp-content/uploads/2018/02/Venice-Italy-25.jpg?fit=1080%2C766&ssl=1&w=640') center/cover
+	}
+.china-card{
+  background: url("https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQ4VKJWDqHTt2N2OBLl3AEhv0uC-fQGUHyf8ZSSnQorOJrJw-HdC0KnE6NmpGwXYRrFhXgB3lVfmsT764rLELM06DM&s=19")
+    center/cover;
+}
+.france-card{
+  background: url("https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/wrgwlkhnjekv8h5tjbn4.jpg")
+    center/cover;
+}
+
+/* ---------- Gallery ---------- */
+.gallery-header{
+	background-image:url('https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?q=80&w=2069&auto=format&fit=crop')
+	}
+.custom-carousel-wrapper{
+	border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-sm)
+	}
+.custom-carousel-wrapper img{
+	height:260px; object-fit:cover
+	}
+.carousel-caption{
+	background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.7)); left:0; right:0; bottom:0; padding:18px 10px
+	}
+.carousel-caption h5,.carousel-caption p{
+	color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.6)
+	}
+	
+
+/* Specific styles for the Booking Page header image and content */
+        .booking-header {
+            /* Using a high-quality, aspirational travel image */
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg/1920px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .booking-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4); /* Darker overlay for text on light image */
+            z-index: 1;
+        }
+
+        .booking-header .top-bar, .booking-header .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Booking form specific styles */
+        .booking-form-card {
+            padding: 30px 20px;
+            margin-top: -30px; /* Pull the card up over the header for a cohesive look */
+            position: relative;
+            z-index: 5;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .form-control-icon {
+            position: relative;
+        }
+
+        .form-control-icon i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+        }
+
+        .form-control-icon input, .form-control-icon select {
+            padding-left: 40px; /* Make space for the icon */
+        }
+
+        .input-inline-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .input-inline-group .form-group {
+            flex: 1;
+            min-width: 0; /* Allows flex items to shrink */
+        }
+        
+        /* Style for the select element to look consistent */
+        .form-control[type="date"], .form-control[type="number"], .form-control select {
+            /* Ensures date and select fields are styled uniformly */
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+/* Custom Booking Button with Animation */
+.custom-booking-btn {
+  background: #3498db; /* Default blue background */
+  border-radius: 12px;  /* Rounded corners */
+  padding: 15px 25px;    /* Adjust padding for a bigger button */
+  font-size: 1.0rem;     /* Larger text size */
+  font-weight: bold;     /* Bold text */
+  color: white;          /* Text color */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Hover effect with scale-up and glowing effect */
+.custom-booking-btn:hover {
+    background: #5dade2; /* Lighter blue on hover */
+	opacity: 1.0;         /* Reduce opacity on hover */
+    transform: scale(1.0); /* Slightly enlarge the button */
+    cursor: pointer;       /* Change cursor to pointer */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bigger shadow on hover */
+    animation: glow 1s infinite alternate; /* Apply the glowing effect */
+}
+
+/* Animation for glowing effect */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 6px rgba(255, 255, 255, 0.2), 0 0 12px #3498db, 0 0 18px #5dade2;
+    }
+    100% {
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.4), 0 0 16px #3498db, 0 0 24px #5dade2;
+    }
+}
+
+/* ---------- Modal (lightweight) ---------- */
+.modal-overlay{
+	position:fixed; inset:0; background:rgba(0,0,0,.45); display:none; z-index:1100
+	}
+.modal{
+	position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); width:min(92%,480px);
+  background:#fff; border-radius:16px; box-shadow:var(--shadow-md); display:none; z-index:1101
+  }
+.modal header{
+	padding:16px 18px; border-bottom:1px solid #eee; font-weight:800
+	}
+.modal .content{
+	padding:16px 18px; color:#333; white-space:pre-line
+}
+.modal .actions{
+	padding:14px 18px 18px
+	}
+.modal .actions .btn{
+	width:100%
+	}
+
+/* ---------- Login ---------- */
+.login-header{text-align:center; margin:18px 0 10px}
+.login-header h1{margin:0; font-weight:900; color:var(--primary)}
+.link-text{display:block; text-align:center; margin-top:10px; color:var(--primary)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:576px){
+  .destination-card{min-width:170px; height:130px}
+  .custom-carousel-wrapper img{height:220px}
+}
+
+/* Remove underline from menu and quick action links */
+.menu-item, .action-item {
+  text-decoration: none; /* Remove underline */
+}
+
+.menu-item:hover, .action-item:hover {
+  text-decoration: none; /* Ensure no underline on hover */
+}

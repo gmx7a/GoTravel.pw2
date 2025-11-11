@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>GoTravel - Gallery</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body class="mobile-app">
+
+    <input type="checkbox" id="menu-toggle" class="hidden-checkbox">
+  <nav class="main-sidebar" role="navigation" aria-label="Main menu">
+    <label for="menu-toggle" class="close-btn"><i class="fas fa-times"></i></label>
+    <ul class="menu-list">
+      <li><a href="home.html" class="menu-item"><i class="fas fa-house"></i> Home</a></li>
+      <li><a href="gallery.html" class="menu-item active"><i class="fas fa-images"></i> Gallery</a></li>
+      <li><a href="booking.html" class="menu-item"><i class="fas fa-ticket"></i> Booking</a></li>
+	  <li><a href="index.html" class="menu-item"><i class="fas fa-right-to-bracket"></i> Logout</a></li>
+    </ul>
+  </nav>
+  <label for="menu-toggle" class="backdrop" aria-hidden="true"></label>
+
+  <header class="top-header gallery-header home-header" role="banner">
+    <div class="top-bar">
+      <label for="menu-toggle" class="menu-icon-btn" role="button" aria-controls="main-sidebar" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </label>
+      <h1 class="logo-title">Travel Gallery</h1>
+      <a href="index.html" class="profile-pic-container" aria-label="Go to Login">
+        <img src="https://images3.alphacoders.com/131/1310203.png" alt="User avatar" class="profile-pic">
+      </a>
+    </div>
+    <div class="header-content container">
+	<br><br>
+		  <h4 class="logo-title">Explore The World</h4>
+		  <br>
+      <p class="welcome-text">Plan your next escape.</p>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <h2 class="section-title">🏞️ Featured Destinations</h2>
+    <p class="section-subtitle" style="padding:0">Swipe through our gallery of breathtaking travel moments.</p>
+
+    <div class="custom-carousel-wrapper card">
+      <div id="travelCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#travelCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#travelCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#travelCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#travelCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+		  <button type="button" data-bs-target="#travelCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+		  <button type="button" data-bs-target="#travelCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://greeceinsiders.travel/wp-content/uploads/2021/02/Santorini-Oia.jpg" class="d-block w-100" alt="Santorini, Greece">
+            <div class="carousel-caption d-md-block"><h5>Santorini, Greece</h5><p>Iconic sunsets and white-washed villages.</p></div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJs5RXoJDH-E4IgtwQTMyZ3xKeT_B_fTZFlA&s" class="d-block w-100" alt="Ubud, Bali">
+            <div class="carousel-caption d-md-block"><h5>Bali, Indonesia</h5><p>Lush rice terraces and spiritual retreats.</p></div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_3840,h_1920,g_auto/dpr_auto/f_auto/q_auto:eco/v1/gettyimages-1390815938?_a=BAVAZGID0" class="d-block w-100" alt="Tokyo, Japan">
+            <div class="carousel-caption d-md-block"><h5>Tokyo, Japan</h5><p>The vibrant energy of a modern metropolis.</p></div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://i0.wp.com/thisdarlingworld.com/wp-content/uploads/2018/02/Venice-Italy-25.jpg?fit=1080%2C766&ssl=1&w=640" class="d-block w-100" alt="Venice, Italy">
+            <div class="carousel-caption d-md-block"><h5>Venice, Italy</h5><p>Romantic gondola rides through historic canals.</p></div>
+          </div>
+		   <div class="carousel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQ4VKJWDqHTt2N2OBLl3AEhv0uC-fQGUHyf8ZSSnQorOJrJw-HdC0KnE6NmpGwXYRrFhXgB3lVfmsT764rLELM06DM&s=19" class="d-block w-100" alt="Hong Kong, China">
+            <div class="carousel-caption d-md-block"><h5>Hong Kong, China</h5><p>You can leave Hong Kong, but it will never leave you.</p></div>
+          </div>
+		   <div class="carousel-item">
+            <img src="https://res.klook.com/image/upload/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/wrgwlkhnjekv8h5tjbn4.jpg" class="d-block w-100" alt="Paris, France">
+            <div class="carousel-caption d-md-block"><h5>Paris, France</h5><p>The City of Light, where romance and history intertwine at every corner.</p></div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#travelCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#travelCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="gallery-info card">
+      <h3>Explore the World</h3>
+      <p>Ready to turn these dreams into reality? Book your trip today!</p>
+      <a href="booking.html" class="btn">
+		<button class="btn btn-primary custom-booking-btn" id="submitBookingBtn" style="margin-top: 10px;">
+			<i class="fas fa-plane-departure"></i> 
+				Book Your Adventure
+        </button>
+		</a>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
